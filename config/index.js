@@ -21,11 +21,12 @@ module.exports = {
     port: 4000,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
+   proxyTable: {
       '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        secure: false
+        target: 'http://localhost:4000',
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

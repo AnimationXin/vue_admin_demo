@@ -5,6 +5,7 @@ import store from './store'
 import routers from './router'
 import ElementUI from 'element-ui'
 import Echarts from 'vue-echarts'
+import VueResource from 'vue-resource'
 import * as filters from './filters'
 import VueMoment from 'vue-moment'
 import 'element-ui/lib/theme-default/index.css'
@@ -13,6 +14,7 @@ Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 Vue.use(VueMoment)
+Vue.use(VueResource)
 Vue.component('chart', Echarts)
 
 /* eslint-disable no-new */

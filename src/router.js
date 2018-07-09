@@ -31,7 +31,7 @@ import user from './views/user'
 import worksPhoto from './views/works/photo'
 import worksVideo from './views/works/video'
 import worksMovie from './views/works/movie'
-
+import worksBill from './views/works/bill'
 import message from './views/message'
 
 const routers = new VueRouter({
@@ -122,6 +122,11 @@ const routers = new VueRouter({
           path: 'profile',
           name: '管理员',
           component: systemAdmin
+        },
+        {
+          path: 'works/bill',
+          name: '账单',
+          component: worksBill
         }
       ]
     },

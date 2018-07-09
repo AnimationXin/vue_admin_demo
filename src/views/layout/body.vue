@@ -69,6 +69,12 @@ export default {
           subnavs: [
             {title: '消息列表', router: '/message'}
           ]
+        },
+        {
+          title: '查询信息',
+          subnavs: [
+            {title: '食品', router: '/works/bill'}
+          ]
         }
       ]
     }

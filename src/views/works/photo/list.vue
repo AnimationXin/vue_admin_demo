@@ -28,6 +28,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex'
 import page from 'components/page'
 
 export default {
+ 
   components: {
     page
   },
