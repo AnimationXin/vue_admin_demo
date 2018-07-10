@@ -4,7 +4,7 @@
     <el-row>
     <el-col :span="2"  v-for="(item,index) of list" :key="index">
       <div class="grid-content bg-purple">
-        <el-button class="hidden" type="primary" @click="getfood(item.name)"> {{ item.name }}</el-button>
+        <el-button class="hidden" :class="currindex == index ? 'color' : ''" type="primary" @click="getfood(item.name,index)"> {{ item.name }}</el-button>
       </div>
     </el-col>
   </el-row>
@@ -24,7 +24,8 @@ export default {
   data () {
     return {
       commit: [],
-      flag: false
+      flag: false,
+      currindex: null
     };
   },
 
@@ -32,10 +33,14 @@ export default {
     ChilList
   },
 
-  computed: {},
+  computed: {
+  
+  },
 
   methods: {
-    getfood(food) {
+    getfood(food,index) {
+      this.currindex = index
+      console.log(index)
       let that = this
       that.list.forEach( (item,index)=>{
         if(item.name == food){
@@ -47,7 +52,6 @@ export default {
         }
       })
       this.flag == true ? this.$message('错误') : ''
-      console.log(this.commit)
     }
   }
 }
@@ -59,5 +63,8 @@ export default {
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+}
+.color{
+  color:red !important
 }
 </style>
